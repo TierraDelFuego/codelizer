@@ -28,6 +28,11 @@ body {
     width: auto;
 }
 
+.filename {
+    font: 16px Arial, Verdana, Sans-Serif;
+    background-color: orange;
+}
+
 h1 {
     margin: 10px;
 }
@@ -523,7 +528,7 @@ if __name__ == '__main__':
                 output_file.write("\n       <tr><td colspan='4'> Could not generated due to UnicodeDecodeError</td></tr>")
             else:
                 output_file.write(
-                "\n       <tr><td colspan='4'><a href='%s'>%s</a></td></tr>" %
+                "\n       <tr><td colspan='4'><a class=\"filename\" href='%s'>%s</a></td></tr>" %
                 (data['htmlfile'], filename))
                 for error in sorted(data['errors'], key=lambda k: k['line']):
                     error_class = ''
